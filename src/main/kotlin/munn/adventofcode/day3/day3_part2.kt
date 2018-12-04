@@ -24,22 +24,17 @@ fun main(args: Array<String>) {
         }
     }
 
-    var sum = 0
-    matrix.forEach { row ->
-       row.forEach { square ->
-           if (square > 1) {
-               sum++
-           }
-       }
+    claims.forEach { c ->
+        var valid = true
+        repeat(c.w) { i ->
+            repeat(c.h) { j ->
+                if (matrix[c.x + i][c.y + j] != 1) {
+                    valid = false
+                }
+            }
+        }
+        if (valid) {
+            println("Claim ${c.id} is valid")
+        }
     }
-
-    println(sum)
 }
-
-data class Claim(
-    val id: Int,
-    val x: Int,
-    val y: Int,
-    val w: Int,
-    val h: Int
-)
