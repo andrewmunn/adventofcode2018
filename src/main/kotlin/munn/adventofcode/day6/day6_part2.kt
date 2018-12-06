@@ -15,5 +15,5 @@ fun main(args: Array<String>) {
         points.sumBy { point -> Math.abs(point.x - x) + Math.abs(point.y - y) }
     }
 
-    println(grid.filter { it < 10000 }.count())
+    println(grid.count { it < 10000 })
 }
