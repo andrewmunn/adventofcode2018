@@ -13,7 +13,7 @@ fun main() {
         } else {
             node = node.backBy(7)
             players[playerIndex] += (value + node.value)
-            node = node.remove()!!
+            node = node.remove()
         }
     }
 
@@ -49,7 +49,7 @@ private class Node(val value: Long, next: Node? = null, prev: Node? = null) {
     }
 
     // returns the next node
-    fun remove(): Node? {
+    fun remove(): Node {
         prev.next = next
         next.prev = prev
         return next
