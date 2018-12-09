@@ -5,8 +5,6 @@ fun main() {
     val lastMarble = 7170000
     var node = Node(0)
     val players = MutableList(playerCount) { 0L }
-    var index = 0
-   // prLongln("0: $circle")
     (1..lastMarble).forEach { value: Int ->
         val playerIndex = (value - 1) % playerCount
         if (value % 23 != 0) {
@@ -17,13 +15,12 @@ fun main() {
             players[playerIndex] += (value + node.value)
             node = node.remove()!!
         }
-       // prLongln("${playerIndex + 1}: ${node.prLong()}")
     }
 
     println(players.max())
 }
 
-private class Node(var value: Long, next: Node? = null, prev: Node? = null) {
+private class Node(val value: Long, next: Node? = null, prev: Node? = null) {
 
     var next: Node
     var prev: Node
@@ -51,19 +48,10 @@ private class Node(var value: Long, next: Node? = null, prev: Node? = null) {
         return node
     }
 
+    // returns the next node
     fun remove(): Node? {
         prev.next = next
         next.prev = prev
         return next
-    }
-
-    fun prLong(): String {
-        var toPrLong = this
-        return buildString {
-           do {
-               append("${toPrLong.value} ")
-               toPrLong = toPrLong.next
-           } while (toPrLong != this@Node)
-       }
     }
 }
