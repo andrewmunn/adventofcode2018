@@ -34,3 +34,15 @@ fun main(args: Array<String>) {
     println(gen.filterValues { it }.keys.sum())
     println(gen)
 }
+
+
+data class Rule(val plants: List<Boolean>, val isPlant: Boolean) {
+
+    fun matchResult(gen: Map<Long, Boolean>, key: Long): Boolean? {
+        return if ((0 until 5).all { i -> plants[i] == (gen[key + i - 2] == true) }) {
+            isPlant
+        } else {
+            null
+        }
+    }
+}
