@@ -40,6 +40,9 @@ fun main(args: Array<String>) {
     println(max)
 }
 
-data class Point(val x: Int, val y: Int)
+data class Point(val x: Int, val y: Int) {
+    fun dX(dx: Int) = copy(x = x + dx)
+    fun dY(dy: Int) = copy(y = y + dy)
+}
 
 data class Score(val point: Point? = null, val distance: Int = Int.MAX_VALUE)
