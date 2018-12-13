@@ -6,8 +6,6 @@ import java.io.File
 fun main(args: Array<String>) {
 
     val lines = File(args.first()).readLines()
-    val width = lines.maxBy { it.length }!!.length
-    val height = lines.size
     val carts = mutableListOf<Cart>()
     val tracks = mutableMapOf<Point, Track?>()
 
