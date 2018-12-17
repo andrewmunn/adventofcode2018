@@ -15,8 +15,7 @@ fun main(args: Array<String>) {
         val opcodeCount = instructions
             .filterNot { it in opcodeMap.values }
             .filter { inst ->
-                registers.clear()
-                registers.addAll(before)
+                before.forEachIndexed { i, value -> registers[i] = value }
                 registers[input[3]] = inst(input[1], input[2])
                 registers == after
             }
@@ -30,8 +29,7 @@ fun main(args: Array<String>) {
 
     val codes = File(args[1]).readLines().map { it.split(" ").map { it.trim().toInt() } }
 
-    registers.clear()
-    registers.addAll(listOf(0,0,0,0))
+    registers.fill(0)
     codes.forEach { code ->
         registers[code[3]] = opcodeMap[code[0]]!!.invoke(code[1], code[2])
     }
