@@ -1,5 +1,7 @@
 package munn.adventofcode.day14
 
+private val i = 1
+
 fun main(args: Array<String>) {
 
     val recipesToMake = "170641"
