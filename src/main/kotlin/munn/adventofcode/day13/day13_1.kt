@@ -1,6 +1,6 @@
 package munn.adventofcode.day13
 
-import munn.adventofcode.day6.Point
+import munn.adventofcode.utils.Point
 import java.io.File
 
 fun main(args: Array<String>) {

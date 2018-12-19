@@ -1,6 +1,6 @@
 package munn.adventofcode.day11
 
-import munn.adventofcode.day6.Point
+import munn.adventofcode.utils.Point
 
 fun main(args: Array<String>) {
     val input = 5719L

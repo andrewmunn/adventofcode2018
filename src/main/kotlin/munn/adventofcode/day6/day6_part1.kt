@@ -1,5 +1,6 @@
 package munn.adventofcode.day6
 
+import munn.adventofcode.utils.Point
 import java.io.File
 
 fun main(args: Array<String>) {
@@ -38,11 +39,6 @@ fun main(args: Array<String>) {
         .maxBy { it.value }
 
     println(max)
-}
-
-data class Point(val x: Int, val y: Int) {
-    fun dX(dx: Int) = copy(x = x + dx)
-    fun dY(dy: Int) = copy(y = y + dy)
 }
 
 data class Score(val point: Point? = null, val distance: Int = Int.MAX_VALUE)
