@@ -39,7 +39,7 @@ fun main(args: Array<String>) {
 
 typealias Instruction = (Int, Int) -> Int
 
-fun createInstructions(registers: MutableList<Int>) = buildList<Pair<String, Instruction>> {
+private fun createInstructions(registers: List<Int>) = buildList<Pair<String, Instruction>> {
     add("addr" to { arg1, arg2 ->
         registers[arg1] + registers[arg2]
     })
