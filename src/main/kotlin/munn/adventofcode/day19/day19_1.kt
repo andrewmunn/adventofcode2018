@@ -33,7 +33,7 @@ typealias Instruction = (Int, Int) -> Int
 
 class InstructionWithArgs(val instruction: Instruction, val arg1: Int, val arg2: Int, val outRegister: Int)
 
-private fun createInstructionSet(registers: List<Int>) = mapOf<String, Instruction>(
+fun createInstructionSet(registers: List<Int>) = mapOf<String, Instruction>(
     "addr" to { arg1, arg2 ->
         registers[arg1] + registers[arg2]
     },
