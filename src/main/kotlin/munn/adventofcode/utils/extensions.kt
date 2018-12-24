@@ -7,3 +7,5 @@ fun String.mutate(block: StringBuilder.() -> Unit): String = StringBuilder(this)
 fun List<*>.rotate(distance: Int) = Collections.rotate(this, distance)
 
 fun <T> buildList(block: MutableList<T>.() -> Unit): List<T> = mutableListOf<T>().apply(block)
+
+fun <T> List<T>.toPair() = this[0] to this[1]
